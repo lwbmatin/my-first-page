@@ -73,11 +73,30 @@ Obsidian 电脑 + 手机 + GitHub 三端同步：完全免费最优方案（2025
 ==我安装的GIT的程序如下：见截图==
 ![[Pasted image 20251214145131.png]]
 
-
+==解决安装问题：见截图==
+![[Pasted image 20251214150104.png]]
 
 > ✅ 验证：打开终端，输入 `git --versi
 > on`，应显示版本号（如 `git version 2.40.1`）
 
+==验证问题：==
+PS C:\Users\Administrator> D:
+PS D:\> git version
+git : 无法将“git”项识别为 cmdlet、函数、脚本文件或可运行程序的
+名称。请检查名称的拼写，如果包括路径，请确保路径正确，然后再试一
+次。
+所在位置 行:1 字符: 1
++ git version
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (git:String) [],
+   CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS D:\>
+==提供代码问题： 新代码："D:\Git\bin\git.exe" --version==
+==PS C:\Users\Administrator> & "D:\Git\bin\git.exe" --version==
+==git version 2.52.0.windows.1==
+==PS C:\Users\Administrator>==
 
 2.4 初始化 Git 仓库
 
