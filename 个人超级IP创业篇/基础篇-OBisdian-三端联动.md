@@ -67,7 +67,9 @@ Obsidian 电脑 + 手机 + GitHub 三端同步：完全免费最优方案（2025
 ==Git for windows/x64 安装程序==
 ![[Pasted image 20251214144403.png]]
 ![[Pasted image 20251214144603.png]]
-
+==安装问题：==
+==安装GIT出现弹出：==
+![[Pasted image 20251214144935.png]]
 
 > ✅ 验证：打开终端，输入 `git --versi
 > on`，应显示版本号（如 `git version 2.40.1`）
