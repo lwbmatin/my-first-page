@@ -63,10 +63,12 @@ Obsidian 电脑 + 手机 + GitHub 三端同步：完全免费最优方案（2025
 - Windows：下载 [Git for Windows](https://git-scm.com/download/win)
 - Mac：用 Homebrew (`brew install git`) 或 [git-scm.com](https://git-scm.com/download/mac)
 - Linux：`sudo apt install git`（Debian/Ubuntu）
-验证：已下载软件，入下图，独立安装程序中
-
+==验证：已下载软件，入下图，独立安装程序中==
+==Git for windows/x64 安装程序==
 ![[Pasted image 20251214144403.png]]
-> ✅ 验证：打开终端，输入 `git --version`，应显示版本号（如 `git version 2.40.1`）
+![[Pasted image 20251214144603.png]]
+> ✅ 验证：打开终端，输入 `git --versi
+> on`，应显示版本号（如 `git version 2.40.1`）
 
 2.4 初始化 Git 仓库
 
