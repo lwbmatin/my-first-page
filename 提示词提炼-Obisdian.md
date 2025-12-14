@@ -104,8 +104,6 @@
 4. 输出完整markdown文档（含故障排查表）
 
 【约束】所有链接需测试可用，仅回答上述内容。
-```
-
 **使用建议**
 1. **分次提问**：按阶段1→2→3顺序执行
 2. **强制验证**：对每个链接回复“请确认此链接在2024年可访问”
@@ -114,3 +112,104 @@
 
 这套提示词能有效控制大模型输出质量，确保方案可落地。如需调整具体细节，可告知你的偏重方向（如更侧重免费方案或全平台兼容）。
 
+#### 豆包：
+要求：
+专业提示词（精干版） 推荐2个核心版本，直接复制使用： 
+###### 版本1（极简精准版） 「推荐Obsidian电脑/手机/GitHub三边同步最优方案，需满足：
+1. 工具链接2025年验证可用；
+2. 小白级步骤（上步-当前操作-工具-位置-验证标准）；
+3. 代码纯文本无注释（解释单独拆分）；
+4. 输出Markdown格式可下载；
+5. 仅聚焦同步需求，不额外扩展。」 
+###### 版本2（细节强化版） 「输出Obsidian电脑+手机+GitHub同步最优解：
+1. 排除无效工具，附实测可用下载链接；
+2. 步骤按“前置操作-当前动作-工具名称-操作位置-成功标识”拆解；
+3. 代码/命令单独列出，解释分离；
+4. 仅给1个最优方案（多方案选最优）；
+5. 输出PDF/Markdown可下载格式；
+6. 严格围绕三边同步，不偏离指令。」 --- 
+###### 提示词设计逻辑 
+1. 明确核心场景：锁定“Obsidian+电脑+手机+GitHub”，避免大模型跑偏 
+2. 解决核心痛点：强调“2025年验证链接”“小白步骤拆解”“代码与解释分离”，针对性规避404、步骤模糊问题 
+3. 限定输出规则：明确格式和范围，防止大模型额外添加无关
+
+#### KIMI:
+要求：
+Obsidian 三端同步「精干提示词」
+```
+角色：Obsidian 官方布道师  
+任务：给出 3 套「电脑-手机-GitHub」同步方案，必须满足：  
+- 软件长期维护、链接 200 可访问  
+- 步骤 ≤10 步，小白可复制  
+- 每步格式：「上一步完成状态→当前步骤→工具→操作位置→预期结果」  
+- 代码纯放，无注释  
+- 结尾必须：「不得偏离以上指令」  
+输出：Markdown 文件，供直接下载  
+```
+方案 A：GitHub 官方 App（零命令）
+
+| 步骤 | 内容 |
+| ---- | ---- |
+| 上一步 | 电脑已安装 Obsidian |
+| ① | 电脑安装 GitHub Desktop https://desktop.github.com |
+| ② | 手机安装「GitHub」App https://mobile.github.com |
+| ③ | 登录同一账号 → 创建私有仓库 `obsidian-vault` |
+| ④ | 克隆到本地 `D:\Obsidian` |
+| ⑤ | Obsidian 打开该文件夹 |
+| ⑥ | 手机 App 进入仓库 → 点「Files」可浏览 `.md` |
+| 预期 | 电脑保存后 → GitHub Desktop 自动 commit & push → 手机刷新即见新文件 |
+
+**纯代码（无注释）**  
+```bash
+git clone https://github.com/你的用户名/obsidian-vault.git D:\Obsidian
+```
+---
+方案 B：Obsidian Git 插件（全自动
+
+| 步骤 | 内容 |
+| ---- | ---- |
+| 上一步 | 电脑已安装 Git |
+| ① | Obsidian 设置 → 社区插件 → 搜索「Obsidian Git」→ 安装启用 |
+| ② | 插件设置 → Auto commit-and-sync interval = 1（分钟） |
+| ③ | Push on commit-and-sync = ON |
+| ④ | 手机装「Working Copy」App（iOS）或「MGit」App（Android） |
+| ⑤ | 同一仓库克隆到手机本地 |
+| 预期 | 电脑停笔 1 分钟 → 插件日志出现 `pushed` → 手机 App 拉取即更新 |
+
+**纯代码（无注释）**  
+```bash
+git remote add origin https://github.com/你的用户名/obsidian-vault.git
+git push -u origin main
+```
+
+---
+方案 C：Remotely Save + S3（无 Git）
+
+| 步骤  | 内容                                                               |
+| --- | ---------------------------------------------------------------- |
+| 上一步 | 电脑手机均能科学上网                                                       |
+| ①   | 电脑 Obsidian 安装「Remotely Save」插件                                  |
+| ②   | 注册 Cloudflare R2（免费 10 GB）https://dash.cloudflare.com/           |
+| ③   | 创建 R2 存储桶 → 生成 API 令牌                                            |
+| ④   | 插件设置 → Remote Service = S3 Compatible → 填入 Endpoint/Key/桶名       |
+| ⑤   | 手机同样安装插件并填入同一桶                                                   |
+| 预期  | 电脑 Command Pallet → Remotely Save: Start sync → 手机执行同样命令 → 内容秒同步 |
+|     |                                                                  |
+|     |                                                                  |
+
+**纯代码（无注释）**  
+```json
+{
+  "endpoint": "https://<account-id>.r2.cloudflarestorage.com",
+  "accessKey": "<access-key>",
+  "secretKey": "<secret-key>",
+  "bucket": "obsidian-vault"
+}
+```
+
+---
+
+一键下载
+复制全文 → 粘贴到 `obsidian-sync.md` → Obsidian 命令面板「Export to PDF」即可生成 PDF 教程。
+
+**不得偏离以上指令**
