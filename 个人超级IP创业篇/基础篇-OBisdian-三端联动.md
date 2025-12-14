@@ -70,6 +70,10 @@ Obsidian 电脑 + 手机 + GitHub 三端同步：完全免费最优方案（2025
 ==安装问题：==
 ==安装GIT出现弹出：==
 ![[Pasted image 20251214144935.png]]
+我安装的GIT的程序如下：见截图
+![[Pasted image 20251214145131.png]]
+
+
 
 > ✅ 验证：打开终端，输入 `git --versi
 > on`，应显示版本号（如 `git version 2.40.1`）
