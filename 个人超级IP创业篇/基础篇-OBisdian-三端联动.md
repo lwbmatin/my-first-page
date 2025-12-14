@@ -46,18 +46,18 @@ Obsidian 电脑 + 手机 + GitHub 三端同步：完全免费最优方案（2025
 
 > ✅ 正确结果：页面 URL 类似 `https://github.com/你的用户名/my-notes`
 
----
+==验证：已经建立Github仓库==
 
 第二步：电脑端设置（Windows / Mac / Linux）
 
 2.1 安装 Obsidian
 
 - 下载地址：[https://obsidian.md/download](https://obsidian.md/download)（✅ 2025年12月可访问）
-
+==验证：已安装==
 2.2 创建本地笔记库
 
 - 打开 Obsidian → “Open folder as vault” → 新建文件夹（如 `MyNotes`）
-
+验证：已创建
 2.3 安装 Git（若未安装）
 
 - Windows：下载 [Git for Windows](https://git-scm.com/download/win)
