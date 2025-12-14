@@ -57,13 +57,13 @@ Obsidian 电脑 + 手机 + GitHub 三端同步：完全免费最优方案（2025
 2.2 创建本地笔记库
 
 - 打开 Obsidian → “Open folder as vault” → 新建文件夹（如 `MyNotes`）
-验证：已创建
+==验证：已创建==
 2.3 安装 Git（若未安装）
 
 - Windows：下载 [Git for Windows](https://git-scm.com/download/win)
 - Mac：用 Homebrew (`brew install git`) 或 [git-scm.com](https://git-scm.com/download/mac)
 - Linux：`sudo apt install git`（Debian/Ubuntu）
-
+验证：下载软件
 > ✅ 验证：打开终端，输入 `git --version`，应显示版本号（如 `git version 2.40.1`）
 
 2.4 初始化 Git 仓库
